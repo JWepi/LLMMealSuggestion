@@ -1,0 +1,198 @@
+html { margin:0; height:100%; width: 100%; display:flex;}
+body { margin:0; height:100%; width: 100%;}
+h1 { font-size:24px;}
+* { font-family:tahoma; font-size:14px; }
+h2 { font-size:20px; margin: 10px;}
+h3 { font-size:16px; margin: 10px;}
+p { line-height:18px; }
+rb { color:red;font-weight:bold; }
+label {padding-right:10px}
+#addProject div {padding-bottom:5px}
+.inputtxt {width:400px;}
+.inputbtn {width:100px;}
+.item {padding: 12px 10px;}
+.item:hover {background-color:Gainsboro;}
+.itemname {width:160px;display:inline-block;color:black;font-size:13px;font-weight:bold;}
+#pidi{width:100px;}
+.seemore{cursor:pointer;text-decoration:underline;}
+.branchesnb{font-size:13px}
+.requestsnb{font-size:13px}
+.allgood{
+    margin-left:10px;color:green;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-button {
+    background: lightgray;
+}
+::-webkit-scrollbar-track-piece {
+    background: #eee;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#headerArea {
+    border-bottom: 3px solid black;
+    padding-left:10px;
+}
+
+#leftArea {
+    float: left;
+    width: 10.3%;
+    border-right: 3px solid black;
+    height: 92%;
+    overflow:auto;
+}
+
+.not-allowed {
+    cursor: not-allowed !important;
+}
+
+
+#leftArea div:last-child {
+    margin-bottom: 45px;
+}
+
+#mainArea {
+    float: left;
+    width: 89.5%;
+}
+
+#choosingArea{
+    height:58%;
+    /* 38.5%; */
+    width: inherit;
+    position:absolute;
+    border-bottom: 3px solid black;
+    overflow:auto;
+}
+
+#resizeArea{
+    background-color: black;
+    cursor:pointer;
+    height: 0.7%;
+    width: inherit;
+    position:absolute;
+    bottom: 27.5%;
+}
+
+#answerArea{
+    height: 27.5%;
+    /* 47%; */
+    width: inherit;
+    position: absolute;
+    bottom: 0px;
+}
+
+#recipesListArea{
+    width: 50%;
+    height: 100%;
+    border-right: 3px solid black;
+    position: absolute;
+    overflow: auto;
+}
+
+#finalRecipeArea{
+    width: 49%;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    overflow: auto;
+}
+
+#finalRecipeArea h3{
+    margin: revert;
+    display: inline-block;
+}
+
+#resetBtn{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 41px;
+    padding-top: 20px;
+    width: 60px;
+    background-color: lightgrey;
+    padding-left: 20px;
+    border-left: 3px solid black;
+    cursor:pointer;
+}
+
+#askBtn{
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    height: 30px;
+    width: inherit;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    padding-top: 10px;
+    background-color: lightgray;
+    border: 1px solid black;
+    cursor:pointer;
+}
+
+.jq-toast-single{
+    font-size:14px !important;
+}
+
+.continent, .cuisine, .food{
+    display: inline-block;
+    border: 1px solid black;
+    height: 140px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.continent:hover, .cuisine:hover, .food:hover{
+    background-color: lightgray;
+}
+
+.continent img, .cuisine img, .food img{
+    height: 100px;    
+    width: 130px;
+    margin: 5px;
+}
+
+.imgtext{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+iframe{
+    height: 28%;
+    width: 90%;
+    position: fixed;
+    bottom: 0px;
+}
+
+.spinnerImg{
+    height:200px;
+    width:200px;
+    margin-left: 35%;
+}
+
+.viewDish, .viewRecipe{
+    width: 15px;
+    height: 15px;
+    float: left;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.viewDish:hover, .viewRecipe:hover, .downloadRecipe:hover{
+    background-color:black;
+}
+
+.downloadRecipe{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    padding: 3px;
+    float: left;
+    margin-top: 10px;
+}

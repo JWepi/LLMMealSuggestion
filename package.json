@@ -1,0 +1,17 @@
+{
+  "name": "choosingdinner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DL",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.3",
+    "jquery-toast-plugin": "^1.3.2",
+    "requirejs": "^2.3.6",
+    "sweetalert2": "^11.7.1"
+  }
+}
