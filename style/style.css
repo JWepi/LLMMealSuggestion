@@ -120,6 +120,24 @@ label {padding-right:10px}
     cursor:pointer;
 }
 
+#historyBtn{
+    display: none;
+    position: absolute;
+    right: 82px;
+    top: 0px;
+    height: 41px;
+    padding-top: 20px;
+    width: 74px;
+    background-color: lightgrey;
+    padding-left: 20px;
+    border-left: 3px solid black;
+    cursor: pointer;
+}
+
+#resetBtn:hover, #historyBtn:hover{
+    background-color: rgb(230, 230, 230);
+}
+
 #askBtn{
     position: absolute;
     bottom: 0;
@@ -195,4 +213,53 @@ iframe{
     padding: 3px;
     float: left;
     margin-top: 10px;
+}
+
+.myoverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+/* Styling for the content inside the overlay */
+.myoverlay-content {
+    width: 85%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+/* Styling for the close button */
+.myoverlay-close-button {
+    top: -20px;
+    margin-top: -20px;
+    margin-right: -20px;
+    cursor: pointer;
+    font-size: 30px;
+    position: sticky;
+    float: right;
+    background-color: white;
+    padding: 8px;
+}
+
+.historyrecipe-dish{
+    cursor: pointer;
+    font-weight:bold;
+}
+
+.historyrecipe-recipe{
+    display: none;
+    transition: transform 0.3s ease-in-out;
 }

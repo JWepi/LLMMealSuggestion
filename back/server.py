@@ -3,6 +3,7 @@ import json
 import asyncio
 import websockets
 import sys
+import os
 
 f = open('config.json', "r")
 data = json.loads(f.read())
@@ -97,7 +98,8 @@ class Receiver:
         'saveDishes':self.saveDishes,
         'saveRecipe':self.saveRecipe,
         'getDishes':self.getDishes,
-        'getRecipe':self.getRecipe
+        'getRecipe':self.getRecipe,
+        'getHistory':self.getHistory
         }
         if (action in switcher):
             return await switcher.get(action, lambda: 'invalid action')(data)
@@ -134,6 +136,24 @@ class Receiver:
         toret = {}
         
         return '{"action":"getRecipe", "data":'+str(toret)+'}'
+
+    async def getHistory(self, data):
+        toret = {}
+        folder_path = "history/recipes"  # Replace with the path to your folder
+
+        files = os.listdir(folder_path)
+
+        if (data["datesort"] is not None):
+            files.sort(key=lambda f: os.path.getmtime(os.path.join(folder_path, f)), reverse=True)
+
+        for filename in files:
+            file_path = os.path.join(folder_path, filename)
+            if os.path.isfile(file_path):
+                with open(file_path, 'r') as file:
+                    content = file.read()
+                    toret[filename] = content.replace("'", "|").replace("\"", "||")
+
+        return '{"action":"getHistory", "data":'+str(toret).replace("'", "\"")+'}'
 
 async def connection(websocket, path):
     rcv = Receiver(websocket)

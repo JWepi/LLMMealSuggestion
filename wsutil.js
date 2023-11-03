@@ -5,8 +5,9 @@ define([], function () {
 		connection: null,
 		disabled: true,
 		echo: true,
+		wscallback: null,
 		
-		initialize: function(options){
+		initialize: function(options, initfailurecallback){
 			var that = this;
 			window.WebSocket = window.WebSocket || window.MozWebSocket;
 			if (!window.WebSocket) {
@@ -43,6 +44,10 @@ define([], function () {
 						console.error("-----DinnerBack-----", message.message, message.data);
 					}
 					that.myManageMessage(message);
+					if (that.wscallback){
+						that.wscallback(JSON.parse(message.data));
+						that.wscallback = null;
+					}
 				};
 			});
 		},
@@ -88,6 +93,10 @@ define([], function () {
 
 		getRecipe: function(cuisine, dish){
 			this.mySend(this.buildActionObject("getRecipe",{"cuisine":cuisine,"dish":dish}));
+		},
+
+		getHistory: function(datesort){
+			this.mySend(this.buildActionObject("getHistory",(datesort ? {"datesort":true} : {})));
 		}
 	};
 	

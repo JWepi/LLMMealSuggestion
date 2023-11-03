@@ -462,6 +462,46 @@ $(function () {
       }
     });
 
+    $("#historyBtn").on("click", (evt) => {
+      if (ongoingAction)
+        return;
+      openHistoryModal();
+    });
+
+    $("#closemyoverlay").on("click", (evt) => {
+      $(document.getElementById('myoverlay')).fadeOut(stdAnimationTime);
+    });
+
+    let lastClickedRecipe = null;
+
+    let openHistoryModal = () => {
+      $(document.getElementById('myoverlay')).fadeIn(stdAnimationTime, () => {
+        wsutil.wscallback = (data) => {
+          let overcontent = document.getElementById("myoverlay-real-content");
+          overcontent.innerHTML = "";
+
+          for (const key in data.data) {
+            let recipe = JSON.stringify(data.data[key]).replace(/\\n/g, "<br/>");
+            overcontent.innerHTML += ("<div class='historyrecipe'><span class='historyrecipe-dish'>" + key + "</span><span class='historyrecipe-recipe'><br/>" +
+              recipe + "<br/></span></div><hr/>");
+          }
+
+          $(".historyrecipe-dish").on("click", function (evt) {
+            $(".historyrecipe-recipe").hide();
+            let recipeElem = $(this.parentElement).find(".historyrecipe-recipe")[0];
+            if (lastClickedRecipe == recipeElem){
+              lastClickedRecipe = null;
+            }
+            else{
+              recipeElem.style.display = 'block';
+              lastClickedRecipe = recipeElem;
+            }
+          });
+        };
+        wsutil.getHistory(true);
+      });
+    };
+
     let loadAllCuisines = () => {
       allCuisines = [];
       $.each(cuisinesDatas, (index, value) => {
@@ -525,7 +565,9 @@ $(function () {
       });
     };
 
-    wsutil.initialize({address:"localhost",port:3729})
+    wsutil.initialize({address:"localhost",port:3729}).then(() => {
+      $("#historyBtn").show();
+    });
     loadAllCuisines();
     changeStep(0);
   });
