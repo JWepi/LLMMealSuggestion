@@ -1,0 +1,32 @@
+<h3>Recipe for '**New York-style Pizza**'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:</span>
+
+<span class='finalDishStepArea'>* 500g bread flour
+* 2g active dry yeast
+* 2g sugar
+* 2g salt
+* 300ml water
+* 2 tbsp olive oil
+* 200g canned crushed tomatoes
+* 1 tsp dried oregano
+* 1 tsp dried basil
+* 1 clove garlic, minced
+* 200g shredded mozzarella cheese
+* Handful of fresh basil leaves</span>
+
+<span class='finalDishStepArea'>Instructions:</span>
+
+<span class='finalDishStepArea'>1. In a large bowl, combine flour, yeast, sugar, and salt.
+2. Add water and olive oil, mixing until a dough forms.
+3. Knead dough on a floured surface for 5-10 minutes, until smooth and elastic.
+4. Place dough in a greased bowl, cover with a towel, and let rise for 1-2 hours, until doubled in size.
+5. Preheat oven to 250°C.
+6. Roll out dough on a floured surface to a thickness of about 0.5cm.
+7. Transfer dough to a greased or parchment-lined baking sheet.
+8. In a small bowl, mix together crushed tomatoes, dried oregano, dried basil, and minced garlic.
+9. Spread tomato mixture evenly over dough, leaving a small border around the edges.
+10. Sprinkle mozzarella cheese evenly over tomato mixture.
+11. Bake for 10-15 minutes, until crust is golden brown and cheese is melted and bubbly.
+12. Remove from oven and top with fresh basil leaves.
+13. Slice and serve. Enjoy!</span>

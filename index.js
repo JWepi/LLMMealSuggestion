@@ -22,6 +22,8 @@ $(function () {
   let ongoingAjaxCall = false;
   let focusIngredients = true;
 
+  const maxModelsTokens = 2000;
+
   const stdTransitionTime = 30;
   const stdAnimationTime = 400;
   const iconsFolder = "./icons";
@@ -332,11 +334,11 @@ $(function () {
       }
       else{
         
-        query += "give me a very short description (that excludes ingredients) of "+getDishNumber()+" dishes inspired by "+choice.cuisine+" cuisine"
+        query += "give me a bullet list of "+getDishNumber()+" dishes along with a very short description (that don't mention ingredients) inspired by "+choice.cuisine+" cuisine"
         if (choice.foods.length > 0){
           query += ", preferably contains:" + choice.foods.join(",");
         }
-        query += ", you must put double line breaks between each dish description";
+        query += ", you answer must have one line break between dish title and description and two line breaks between each dish";
 
         switch(getModelChoice()){
           case "gpt":
@@ -387,7 +389,7 @@ $(function () {
 
     let getDishNameFromEvt = (evt) => {
       let dishDescriptionElem = $(evt.currentTarget.parentElement).find(".dishDescription")[0];
-      return getStringAfterFirstChar($(dishDescriptionElem).text().split(":")[0], '.').trim().replace("&", "and");
+      return getStringAfterFirstChar($(dishDescriptionElem).text().split(":")[0], '.').trim().replace("&", "and").replace(/\*/g, "");
     };
 
     let setRecipeListEvents = () => {
@@ -434,7 +436,7 @@ $(function () {
 
     let displayAnsweredRecipies = (data) => {
       let toshow = "";
-      let recipes = data.split("\n\n");
+      let recipes = data.replace(/\n \n/g, "\n\n").replace(/\n  \n/g, "\n\n").replace(/\n   \n/g, "\n\n").replace(/\n    \n/g, "\n\n").replace(/\n     \n/g, "\n\n").split("\n\n");
 
       $.each(recipes, (index, value) => {
         if (toshow.length > 0)
@@ -614,7 +616,7 @@ $(function () {
         ],
         "temperature": 0.9,
         "top_p": 0.5,
-        "max_tokens": 700
+        "max_tokens": maxModelsTokens
       };
 
       switch(mistralmodel){
@@ -673,7 +675,7 @@ $(function () {
       let dataToSend = {
         "model": gptmodel,
         "messages": [{role: "user", content: request}],
-        "max_tokens": 700,
+        "max_tokens": maxModelsTokens,
         "temperature": 0.9,
         "frequency_penalty": 0.8,
         "presence_penalty": 0.8
