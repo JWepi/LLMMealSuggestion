@@ -1,0 +1,33 @@
+<h3>Recipe for 'Hortobágyi Palacsinta'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:</span>
+
+<span class='finalDishStepArea'>150 grams veal
+1 onion
+3 bell peppers
+1 tomato 
+100 grams flour
+2 eggs
+500 milliliters milk 
+50 grams butter 
+Salt and pepper to taste </span>
+
+<span class='finalDishStepArea'>Instructions: </span>
+
+<span class='finalDishStepArea'>Chop onion, bell peppers, tomato.</span>
+
+<span class='finalDishStepArea'>Sauté in pan until tender. </span>
+
+<span class='finalDishStepArea'>Add veal, continue cooking. </span>
+
+<span class='finalDishStepArea'>Whisk flour, eggs, milk until smooth.</span>
+
+<span class='finalDishStepArea'>Heat butter in pan. </span>
+
+<span class='finalDishStepArea'>Pour batter into pan.</span>
+
+<span class='finalDishStepArea'>Cook until browned. </span>
+
+<span class='finalDishStepArea'>Fill with veal mixture.</span>
+
+<span class='finalDishStepArea'>Serve warm.</span>

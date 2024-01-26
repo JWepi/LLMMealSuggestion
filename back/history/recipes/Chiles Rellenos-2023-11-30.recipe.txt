@@ -1,0 +1,18 @@
+<h3>Recipe for 'Chiles Rellenos'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+8 medium-size poblano peppers
+200 grams queso fresco 
+150 grams all-purpose flour 
+4 large eggs 
+1 liter vegetable oil </span>
+
+<span class='finalDishStepArea'>Instructions: 
+Roast poblano peppers until blackened. 
+Let cool, peel and remove seeds.
+Stuff each pepper with cheese.
+Coat stuffed peppers in flour.
+Separate egg whites from yolks. Beat egg whites until stiff peaks form. Mix in yolks gently.  
+Dip floured peppers into egg mixture to coat.
+Fry peppers in hot oil until golden brown on both sides.
+Drain on paper towels before serving.</span>

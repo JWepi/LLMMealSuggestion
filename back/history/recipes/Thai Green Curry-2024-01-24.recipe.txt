@@ -1,0 +1,22 @@
+<h3>Recipe for 'Thai Green Curry'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+- 500g chicken 
+- 400ml coconut milk
+- 2 tablespoons green curry paste
+- 1 tablespoon vegetable oil
+- 10 Thai basil leaves 
+- 2 kaffir lime leaves   
+- fish sauce to taste
+- sugar to taste
+ </span>
+
+<span class='finalDishStepArea'>Instructions:
+Heat oil.     
+Add curry paste, stir for two minutes.
+Add chicken, cook until white.
+Pour in coconut milk.      
+Simmer for ten minutes.
+Add lime and basil leaves.      
+Season with fish sauce and sugar.
+Serve hot with rice.</span>

@@ -1,0 +1,28 @@
+<h3>Recipe for 'Jjimdak'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+- 1 kilogram chicken
+- 300 grams potatoes
+- 2 carrots
+- 200 grams onion
+- 100 grams green onions 
+- 4 dried red chili peppers 
+- 50 grams glass noodles 
+- 60 milliliters soy sauce 
+- 30 milliliters oyster sauce 
+-15 milliliters sesame oil
+- One tablespoon sugar 
+-One tablespoon minced garlic</span>
+
+<span class='finalDishStepArea'>Instructions:
+1. Soak glass noodles in water.
+2. Cut chicken into pieces.
+3. Peel and cut potatoes, carrots, onion.
+4. Cut green onions into lengths.
+5. Remove seeds from chili peppers.
+6. Combine soy sauce, oyster sauce, sesame oil, sugar and garlic in bowl.
+7. Place chicken pieces in pot with water covering them fully.
+8. Boil until cooked thoroughly then drain the water out.
+9. Add potatoes, carrot and onion to pot with chicken and pour in the sauce mixture.
+10.Cover pot and cook on medium heat for about twenty minutes or until vegetables are softening up but not completely cooked yet..
+11.Add soaked noodles and continue cooking for another ten minutes until everything is well-cooked through with the flavors all melded together nicely..</span>

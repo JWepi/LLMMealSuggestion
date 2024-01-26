@@ -1,0 +1,25 @@
+<h3>Recipe for 'Bulgogi Rice Bowl'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+500 grams beef tenderloin
+250 milliliters soy sauce
+100 grams brown sugar
+2 cloves garlic, minced 
+1 onion
+1 carrot
+200 grams spinach 
+200 grams mushrooms  
+2 cups cooked rice</span>
+
+<span class='finalDishStepArea'>Instructions:
+1. Slice beef thinly.
+2. Mix soy sauce, brown sugar, and garlic to make marinade.
+3. Marinate beef for 30 minutes.
+4. Sauté onions, carrots in pan.
+5. Add marinated beef, cook until done.
+6. Sauté mushrooms and spinach separately.
+7. Prepare bowl with cooked rice at bottom.
+8. Top with sautéed veggies and cooked beef.
+9. Serve hot.</span>
+
+<span class='finalDishStepArea'>Note: Adjust ingredients to taste preference if needed</span>

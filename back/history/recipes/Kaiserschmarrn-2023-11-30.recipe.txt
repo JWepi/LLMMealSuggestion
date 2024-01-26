@@ -1,0 +1,24 @@
+<h3>Recipe for 'Kaiserschmarrn'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+140 grams Flour
+4 Eggs
+50 milliliters Milk
+40 grams Sugar
+1 pinch Salt
+40 grams Raisins
+2 tablespoons Rum 
+20 grams Butter </span>
+
+<span class='finalDishStepArea'>Instructions:
+1. Separate eggs.
+2. Mix yolks, flour, milk, sugar and salt.
+3. Soak raisins in rum.
+4. Beat egg whites until stiff.
+5. Fold raisins and egg whites into batter.
+6. Add butter to heated pan.
+7. Pour batter in pan, cook on low heat till golden brown underneath.
+8. Flip, tear into pieces with fork while frying other side till golden brown too.
+9. Sprinkle sugar over finished Kaiserschmarrn before serving.</span>
+
+<span class='finalDishStepArea'>Note: Serve hot with powdered sugar and apple sauce or berry compote if desired.</span>

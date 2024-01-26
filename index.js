@@ -1,13 +1,24 @@
 $(function () {
   "use strict";
 
+  // type aimodel = "gpt" | "mistral-M" | "mistral-7B";
+
+  const getModelChoice = () => {
+    return $("#aiList").val();
+  };
+  
+  const getDishNumber = () => {
+    return $("#recipeNb").val();
+  };
+
   let choice = {
     cuisine:"",
     foods:[]
-  }
+  };
 
   let elemIdUnique = 0;
   let ongoingAction = false;
+  let nbrecipechoice = false;
   let ongoingAjaxCall = false;
   let focusIngredients = true;
 
@@ -20,11 +31,15 @@ $(function () {
   require(["./datas/cuisines", 
             "./datas/foods", 
             "./datas/openaiKey",
+            "./datas/mistralKey",
             "./wsutil"],
   function(cuisinesDatas,
             foodsDatas,
             openaiKey,
+            mistralKey,
             wsutil){
+
+    $("#aiList").numberselector();
 
     window.addEventListener('beforeunload', function (e) {
       e.preventDefault();
@@ -33,6 +48,49 @@ $(function () {
       var confirmationMessage = 'Are you sure you want to leave the page?';
       (e || window.event).returnValue = confirmationMessage;
       return confirmationMessage;
+    });
+
+    $(".numberselector span").on("click", (evt) => {
+      const oldValue = $("#aiList").val();
+      const newValue = $(evt.currentTarget).text();
+
+      if (oldValue != newValue){
+        const confirmedChange = () => {
+          if (newValue == 'mistral-7B') {
+            fireSwal(
+              'Info', 
+              'This model is extremely slow as it runs locally (can take 5-10min to generate 10 dishes).',
+              'info',
+              'OK'
+            )
+          }
+        }
+  
+        if (pagestep == 0){
+          confirmedChange();
+        }
+        else {
+          fireSwal(
+            'Are you sure?', 
+            'Do you really want to switch from "' + oldValue +'" to "' + newValue +'" ?',
+            'warning', 
+            'Yes', 
+            'No', 
+            (result) => {
+              if (result.isConfirmed) {
+                confirmedChange();
+                // changeStep(0);
+              }
+              else {
+                //rollback
+                $("#aiList").val(oldValue);
+                $(".numberselector .selected").attr("class", "");
+                $(".numberselector [data-attr='"+oldValue+"']").attr("class", "selected");
+              }
+            }
+          );
+        }
+      }
     });
 
     $("#resizeArea").on("click", (evt) => {
@@ -57,7 +115,7 @@ $(function () {
         title: fstitle,
         text: fstext,
         icon: fsicon,
-        showCancelButton: true,
+        showCancelButton: fscanceltext,
         confirmButtonText: fsconfirmtext,
         cancelButtonText: fscanceltext,
       }).then(fsthencb);
@@ -270,14 +328,25 @@ $(function () {
       let query = "";
       if (dishName){
         query += "Few words, not too detailed, keep line breaks and quantities,"+
-         "only ingredients and instructions for dish \"" + dishName + "\",no imperial system";
+         "provide a chef recipe with only ingredients and instructions for dish \"" + dishName + "\",no imperial system";
       }
       else{
-        query += "give me a very short description (that excludes ingredients) of 10 dishes inspired by "+choice.cuisine+" cuisine"
+        
+        query += "give me a very short description (that excludes ingredients) of "+getDishNumber()+" dishes inspired by "+choice.cuisine+" cuisine"
         if (choice.foods.length > 0){
           query += ", preferably contains:" + choice.foods.join(",");
         }
-        query += ", double the line breaks in your answer";
+        query += ", you must put double line breaks between each dish description";
+
+        switch(getModelChoice()){
+          case "gpt":
+            // query += "bonus"
+            break;
+          case "mistral-M":
+          case "mistral-7B":
+            // query += "bonus"
+            break;
+        }
       }
       return query;
     };
@@ -299,6 +368,10 @@ $(function () {
             break;
           default:
             break;
+        }
+      } else {
+        if (step == 0){
+          showToast("Nothing to reset!", "error");
         }
       }
     };
@@ -334,14 +407,14 @@ $(function () {
         else {
           fireSwal(
             'Are you sure?', 
-            'Do you REALLY want to ask the following to ChatGPT:\n"' + getRecipeQuery(dishName) +'"',
+            'Do you REALLY want to ask the following to "' +getModelChoice()+ '":\n"' + getRecipeQuery(dishName) +'"',
             'warning', 
             'Go Ask', 
             'Cancel', 
             (result) => {
               if (result.isConfirmed) {
                 showSpinner('#finalRecipeArea');
-                sendRequestToAI(getRecipeQuery(dishName), (data) =>{
+                sendRequestToModel(getRecipeQuery(dishName), (data) =>{
                   hideSpinner();
                   displayFinalRecipe(getTextFromResponse(data), dishName);
                 });
@@ -417,8 +490,16 @@ $(function () {
       return (toret);
     };
 
+    $("#recipeNb").on("focusin", (evt) => {
+      nbrecipechoice = true;
+    });
+
+    $("#recipeNb").on("focusout", (evt) => {
+      nbrecipechoice = false;
+    });
+
     $("#askBtn").on("click", (evt) => {
-      if (ongoingAction)
+      if (ongoingAction || nbrecipechoice)
         return;
       ongoingAction = true;
       if (pagestep < 2){
@@ -431,14 +512,14 @@ $(function () {
         else {
           fireSwal(
             'Are you sure?', 
-            'Do you REALLY want to ask the following to ChatGPT:\n"' + getRecipeQuery() +'"',
+            'Do you REALLY want to ask the following to "' +getModelChoice()+ '":\n"' + getRecipeQuery() +'"',
             'warning', 
             'Go Ask', 
             'Cancel', 
             (result) => {
               if (result.isConfirmed) {
                 showSpinner('#recipesListArea');
-                sendRequestToAI(getRecipeQuery(), (data) =>{
+                sendRequestToModel(getRecipeQuery(), (data) =>{
                   hideSpinner();
                   displayAnsweredRecipies(getTextFromResponse(data));
                 });
@@ -454,12 +535,7 @@ $(function () {
     $("#resetBtn").on("click", (evt) => {
       if (ongoingAction)
         return;
-      if (pagestep == 0){
-        showToast("Nothing to reset!", "error");
-      }
-      else{
-        changeStep(0);
-      }
+      changeStep(0);
     });
 
     $("#historyBtn").on("click", (evt) => {
@@ -510,36 +586,110 @@ $(function () {
       allCuisines.splice(allCuisines.indexOf("Random"), 1);
     };
 
-    let sendRequestToAI = (request, callbackSuccess, gptmodel = "gpt-4") => {
-      console.log("Sending to AI:", request);
+    let sendRequestToModel = (request, callbackSuccess) => {
+      switch(getModelChoice()){
+        case "gpt":
+          sendRequestToGPT(request, callbackSuccess);
+          break;
+        case "mistral-M":
+          sendRequestToMistral(request, callbackSuccess, "medium");
+          break;
+        case "mistral-7B":
+          sendRequestToMistral(request, callbackSuccess, "local");
+          break;
+      }
+    }
+
+    let sendRequestToMistral = (request, callbackSuccess, mistralmodel = "medium") => {
+      console.log("Sending to Mistral:", request);
       ongoingAjaxCall = true;
 
-      let dataToSend = {};
+      let dataToSend = {
+        "model": "mistral-medium",
+        "messages": [
+            {
+                "role": "user",
+                "content": request
+            }
+        ],
+        "temperature": 0.9,
+        "top_p": 0.5,
+        "max_tokens": 700
+      };
 
-      switch(gptmodel){
-        case "gpt-3.5-turbo":
-          dataToSend = {
-            "model": gptmodel,
-            "messages": [{role: "user", content: request}],
-            "max_tokens": 500,
-            "temperature": 0.7,
-            "frequency_penalty": 0.7,
-            "presence_penalty": 0.7
-          };
+      switch(mistralmodel){
+        case "medium":
+          // dataToSend.temperature = 0;
           break;
-        case "gpt-4":
-          dataToSend = {
-            "model": gptmodel,
-            "messages": [{role: "user", content: request}],
-            "max_tokens": 500,
-            "temperature": 0.7,
-            "frequency_penalty": 0.7,
-            "presence_penalty": 0.7
-          };
+        case "local":
+          // dataToSend.temperature = 0;
           break;
         default:
           break;
       }
+
+      let urlapicall = "";
+
+      switch(mistralmodel){
+        case "medium":
+          urlapicall = "https://api.mistral.ai/v1/chat/completions";
+          break;
+        case "local":
+          urlapicall = "http://localhost:2666/v1/chat/completions";
+          break;
+        default:
+          break;
+      }
+
+      $.ajax({
+        url: urlapicall,
+        type: 'POST',
+        dataType: "json",
+        contentType : 'application/json',
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader('Authorization', 'Bearer ' + mistralKey);
+        },
+        data: JSON.stringify(dataToSend),
+        success: (data) => {
+          console.log("Ajax Call Success:", data);
+          if(callbackSuccess)
+            callbackSuccess(data);
+        },
+        error: (data) => {
+          console.log("Ajax Call Failure:", data);
+          hideSpinner();
+          showToast("Ajax call to mistral failed: check logs and eventually try to send your request again.", "error", 10000);
+        },
+        complete: () => {
+          ongoingAjaxCall = false;
+        }
+      });
+    };
+
+    let sendRequestToGPT = (request, callbackSuccess, gptmodel = "gpt-4") => {
+      console.log("Sending to gpt:", request);
+      ongoingAjaxCall = true;
+
+      let dataToSend = {
+        "model": gptmodel,
+        "messages": [{role: "user", content: request}],
+        "max_tokens": 700,
+        "temperature": 0.9,
+        "frequency_penalty": 0.8,
+        "presence_penalty": 0.8
+      };
+
+      switch(gptmodel){
+        case "gpt-3.5-turbo":
+          // dataToSend.temperature = 0;
+          break;
+        case "gpt-4":
+          // dataToSend.temperature = 0;
+          break;
+        default:
+          break;
+      }
+
       $.ajax({
         url: "https://api.openai.com/v1/chat/completions",
         type: 'POST',

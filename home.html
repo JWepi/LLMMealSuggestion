@@ -7,6 +7,7 @@
         <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="./node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
         <script type="text/javascript" src='./node_modules/sweetalert2/dist/sweetalert2.all.min.js'></script>
+        <script type="text/javascript" src='./vendors/numberselector/numberselector.js'></script>
 
         
         <script type="text/javascript" src='./node_modules/requirejs/require.js'></script>
@@ -14,6 +15,7 @@
 
         <link rel="stylesheet" href="./style/style.css">
         <link rel="stylesheet" href="./node_modules/jquery-toast-plugin/dist/jquery.toast.min.css">
+        <link rel="stylesheet" href="./vendors/numberselector/numberselector.css">
     </head>
     <body>
         <div id="headerArea">
@@ -21,11 +23,23 @@
             <h1>Choosing Dinner</h1>
             <div id="resetBtn">RESET</div>
             <div id="historyBtn">HISTORY</div>
+            <div id="aiChoice">
+                <select id="aiList" name="aiList">
+                    <option value="gpt">gpt</option>
+                    <option value="mistral-M">mistral-M</option>
+                    <option value="mistral-7B">mistral-7B</option>
+                </select>
+            </div>
         </div>
         <div id="leftArea">
             <h3>Chosen Options</h3>
-
-            <span id="askBtn">Ask For Recipe</span>
+            <span id="askBtn">Ask For
+                <select id="recipeNb">
+                    <option selected>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                </select>
+            Dishes</span>
         </div>
         <div id="mainArea">
             <h2>Choose from:</h2>

@@ -1,0 +1,33 @@
+<h3>Recipe for 'Mushroom Risotto'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+300 grams Arborio rice
+1 liter vegetable broth
+500 grams fresh mushrooms
+2 cloves garlic 
+1 onion
+100 milliliters white wine 
+50 grams Parmesan cheese
+2 tablespoons olive oil 
+Salt, to taste</span>
+
+<span class='finalDishStepArea'>Instructions:</span>
+
+<span class='finalDishStepArea'>- Heat oil in pan. </span>
+
+<span class='finalDishStepArea'>- Add chopped onions, garlic. Cook until soft.</span>
+
+<span class='finalDishStepArea'>- Slice mushrooms, add to pan. Cook until brown.</span>
+
+<span class='finalDishStepArea'>- In separate pot, heat vegetable broth.</span>
+
+<span class='finalDishStepArea'>- Add rice to pan with mushrooms, stir well.</span>
+
+<span class='finalDishStepArea'>- Pour in white wine slowly while stirring continuously. </span>
+
+<span class='finalDishStepArea'>- Gradually add warm broth while stirring constantly.</span>
+
+<span class='finalDishStepArea'>- After 15 minutes of constant stirring and adding broth, check rice for doneness. Continue cooking if necessary until tender but firm to bite.</span>
+
+<span class='finalDishStepArea'>- Grate Parmesan cheese over risotto before serving. Season with salt if needed.
+</span>

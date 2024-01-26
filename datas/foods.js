@@ -54,7 +54,7 @@ define([], function() { return [
         "cuisine": "Italy",
         "list":["Tomato","Garlic","Onion","Cheese","Sausage","Beef","Veal","Pork","Chicken","Fish","Pasta","Rice",
         "Bread","Potato","Eggplant","Bell Pepper","Zucchini","Squash","Artichoke","Asparagus","Peas","Green beans",
-        "Lettuce","Lemon","Orange","Apple","Pear","Peach","Plum","Strawberry","Grapes","Melon"]
+        "Lettuce","Lemon","Orange","Apple","Pear","Peach","Plum","Strawberry","Grapes","Melon","Mushroom"]
       },
       {
         "cuisine": "Spain",
@@ -143,7 +143,7 @@ define([], function() { return [
         "Almond","Hazelnut","Walnut","Cashew"]
       },
       {
-      "cuisine": "Peru",
+        "cuisine": "Peru",
         "list":["Potato","Corn","Rice","Beans","Beef","Chicken","Pork","Fish","Avocado",
         "Tomato","Onion","Garlic","Lemon","Lettuce","Pepper","Peas","Eggplant","Carrot","Plantain"]
       }

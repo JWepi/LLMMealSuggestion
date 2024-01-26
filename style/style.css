@@ -58,6 +58,7 @@ label {padding-right:10px}
 #mainArea {
     float: left;
     width: 89.5%;
+    margin-top: -60px;
 }
 
 #choosingArea{
@@ -108,23 +109,23 @@ label {padding-right:10px}
 }
 
 #resetBtn{
-    position: absolute;
-    right: 0px;
-    top: 0px;
+    position: relative;
+    float: right;
+    top: -60px;
     height: 41px;
     padding-top: 20px;
     width: 60px;
     background-color: lightgrey;
     padding-left: 20px;
     border-left: 3px solid black;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #historyBtn{
     display: none;
-    position: absolute;
-    right: 82px;
-    top: 0px;
+    position: relative;
+    float: right;
+    top: -60px;
     height: 41px;
     padding-top: 20px;
     width: 74px;
@@ -262,4 +263,40 @@ iframe{
 .historyrecipe-recipe{
     display: none;
     transition: transform 0.3s ease-in-out;
+}
+
+#aiChoice{
+    position: relative;
+    float: right;
+    top: -60px;
+    height: 41px;
+    width: auto;
+    margin-right: 2px;
+    background-color: lightgrey;
+    border-left: 3px solid black;
+    cursor: pointer;
+    height: 60px;
+}
+
+#aiChoice .numberselector {
+    margin-top: 0px;
+    padding-left: 2px;
+}
+
+#aiChoice .numberselector span {
+    font-size: 17px;
+    height: 44px;
+    padding-top: 13px;
+}
+
+.numberselector span.selected:before {
+    background-color: lightgrey !important;
+}
+
+.numberselector span {
+    border: initial !important;
+}
+
+.numberselector span.selected:after {
+    border-bottom-color: black !important;
 }

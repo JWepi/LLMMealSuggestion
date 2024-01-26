@@ -1,0 +1,25 @@
+<h3>Recipe for 'Salsa Verde Chicken Casserole'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+- 500 grams chicken breasts
+- 1 onion
+- 2 cloves garlic
+- 24 tortillas
+- 475 milliliters salsa verde 
+- 240 milliliters sour cream 
+- 300 grams shredded Monterey Jack cheese 
+- Salt</span>
+
+<span class='finalDishStepArea'>Instructions:
+1. Cook chicken.
+2. Shred cooked chicken.
+3. Chop onion and garlic.
+4. Sauté onion and garlic.
+5. Mix chicken, sautéed onions, and garlic with salsa verde and sour cream.
+6. Layer half the tortillas in baking dish.
+7. Add half of chicken mixture on top of tortillas.
+8. Sprinkle half of cheese over mixture.
+9. Repeat layers with remaining ingredients.
+10. Bake at 190°C for about 25 minutes until bubbly & browned on top.</span>
+
+<span class='finalDishStepArea'>Enjoy your Salsa Verde Chicken Casserole!</span>

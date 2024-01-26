@@ -1,0 +1,23 @@
+<h3>Recipe for 'Korean Fried Chicken (Yangnyeom-Tongdak)'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+1 kilogram chicken wings
+120 grams potato starch
+2 liters vegetable oil
+5 milliliters rice vinegar 
+60 milliliters gochujang (Korean chili paste)
+30 grams honey
+15 grams brown sugar 
+15 grams soy sauce 
+1 garlic clove, minced</span>
+
+<span class='finalDishStepArea'>Instructions:
+1. Coat chicken in potato starch.
+2. Heat vegetable oil to 175°C.
+3. Fry chicken for 10 minutes.
+4. Drain and cool for 5 minutes.
+5. Refry chicken for another 10 minutes.
+6. Mix rice vinegar, gochujang, honey, brown sugar, soy sauce and garlic in a bowl.
+7. Toss fried chicken in sauce until evenly coated.</span>
+
+<span class='finalDishStepArea'>Enjoy your Korean Fried Chicken (Yangnyeom-Tongdak)!</span>

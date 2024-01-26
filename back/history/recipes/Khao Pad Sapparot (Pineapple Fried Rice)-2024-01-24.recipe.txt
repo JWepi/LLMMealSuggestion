@@ -1,0 +1,34 @@
+<h3>Recipe for 'Khao Pad Sapparot (Pineapple Fried Rice)'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+150 grams Jasmine rice
+200 grams Pineapple chunks
+50 grams Sweet corn kernels 
+75 grams Chicken bites
+30 grams Cashew nuts  
+15 ml Vegetable oil   
+10 ml Soy sauce   
+5 g Spring onions 
+5 g Curry powder  
+2 Thai bird eye chili, chopped</span>
+
+<span class='finalDishStepArea'>Instructions:</span>
+
+<span class='finalDishStepArea'>Prepare the jasmine rice. Set aside.</span>
+
+<span class='finalDishStepArea'>Heat vegetable oil in a pan.</span>
+
+<span class='finalDishStepArea'>Add chicken bites. Stir fry until cooked through.</span>
+
+<span class='finalDishStepArea'>Mix in curry powder and Thai bird eye chili.</span>
+
+<span class='finalDishStepArea'>Add pineapple chunks and sweet corn. </span>
+
+<span class='finalDishStepArea'>Stir in cooked Jasmine rice and mix well.</span>
+
+<span class='finalDishStepArea'>Pour soy sauce into mixture.</span>
+
+<span class='finalDishStepArea'>Toss cashew nuts on top of the dish.  </span>
+
+<span class='finalDishStepArea'>Garnish with spring onions before serving warm.
+</span>

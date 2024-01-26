@@ -1,0 +1,20 @@
+<h3>Recipe for 'Rakott Teszta'</h3><img src='icons/download.png' class='downloadRecipe'/>
+
+<span class='finalDishStepArea'>Ingredients:
+500 grams pasta
+300 grams sausages
+1 liter milk
+2 eggs
+150 grams cheese
+Salt to taste</span>
+
+<span class='finalDishStepArea'>Instructions:
+1. Cook pasta.
+2. Slice sausages.
+3. Preheat oven to 180°C.
+4. Layer pasta and sausage in baking dish.
+5. Beat eggs into milk, add salt.
+6. Pour over layers in dish.
+7. Sprinkle cheese on top.
+8. Bake for 30 minutes until golden brown.
+9. Serve hot after cooling slightly.</span>
